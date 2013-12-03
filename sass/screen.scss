@@ -1,0 +1,340 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+@import "grid";
+@import "build";
+
+* {
+    @include box-sizing(border-box);
+}
+
+body {
+    font-family: $roboto;
+    color: #777;
+    font-weight: 300;
+    padding: 4em 0;
+}
+
+h1 { 
+    font-size: 2.2em;
+    font-weight: 100;
+    margin: .3em;
+    line-height: 1.6;
+
+    &.spaced-header {
+        margin: 70px 0;
+    }
+}
+
+h2 {
+    font-size: 1.67em;
+    font-weight: 100;
+    margin: .7em 0;
+    color: $lightspotblue;
+}
+
+p, dl {
+    line-height: 1.65;
+    color: #999;
+    font-size: .87rem;
+    margin: 15px 0;
+}
+
+dt, dd {
+    display: inline;
+}
+
+dt {
+    font-weight: bold;
+    color: #666;
+}
+
+dt::after {
+    content: ":"
+}
+
+dd::after {
+    content: '\A';
+    display: block;
+}
+
+header {
+    display: block;
+    line-height: 4em;
+    z-index: 999;
+    width: 100%;
+    // background: #f9f9f9;
+    background: #fff;
+    top: 0;
+    position: fixed;
+    @include transition(all .15s ease-in-out);
+
+    &.has-shadow {
+        @include box-shadow(rgba(0, 0, 0, 0.027451) 0px 4px 0px);
+    }
+
+    ul {
+        background: url("../images/smallappicon.png") left center no-repeat;
+        position: relative;
+
+        &:before {
+            // content: 'Spotted';
+            font-size: 3em;
+            color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+}
+
+nav {
+    display: inline;
+    ul {
+        @extend .clearfix;
+
+        li {
+            float: right;
+            text-align: center;
+            padding: 0 10px;
+            font-size: .7em;
+            color: #bbb;
+            font-weight: 300;
+            text-decoration: none;
+            cursor: pointer;
+
+            &:hover {
+                color: #333;
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: 40px !important;    
+    border-top: 2px solid #eee;
+
+    nav { 
+        float: left; 
+        margin-top: 50px;
+    }
+
+    nav ul {
+        li {
+            float: left;
+            font-size: .9em;
+            color: #777;
+        }
+    }
+
+    .copyright { 
+        float: right;
+        margin-top: -20px;
+    }
+}
+
+.full-background {
+    width: 100%;
+
+    &.main-color {
+        background: $spotblue;
+    }
+
+    &.faded-color {
+        background: $accentblue;
+    }
+}
+
+.sexy-intro {
+    color: #f9f9f9;
+    font-size: 1.4em;
+    line-height: 1.4;
+    font-weight: 100;
+    font-style: normal;
+    min-height: 300px;
+    padding-top: 40px;
+    h1 {
+         margin-left: 0;
+    }
+    span { display: block; }
+}
+
+.biglogo {
+    background: url("../images/app-icon-2x.png") center center no-repeat;
+    // @include background-size(cover);
+    display: block;
+    height: 350px;
+}
+
+.iphone-mock {
+    background: url("../images/iphone-mock.png") center center no-repeat;
+    // @include background-size(cover);
+    display: block;
+    height: 550px;
+}
+
+section {
+    padding: 40px 0;
+    font-size: .9em;
+}
+
+.share-what {
+    padding-top: 50px;
+}
+
+.align-middle {
+    padding-top: 150px;
+}
+
+
+ul.about-tabs {
+
+    li {
+        line-height: 2;
+        font-size: 1.9em;
+        font-weight: 300;
+        padding-top: 6px;
+        border-top: 1px solid #eee;
+        border-bottom: 1px solid #eee;
+        color: #666;
+        text-transform: uppercase;
+        cursor: pointer;
+        @include transition(all .17s ease-in-out);
+
+        &:hover {
+            color: #282828;
+            padding-left: 25px;
+            background: #f9f9f9;
+        }
+
+        &:first-of-type {
+            border-bottom: none;
+        }
+        &:last-of-type {
+            border-top: none;
+        }
+    }
+}
+
+ul.help-menu {
+    padding: 70px 0 40px;
+    position: relative;
+
+    &:before {
+        content: "Topics";
+        position: absolute;
+        left: 0;
+        top: 40px;
+    }
+
+    li {
+        display: inline-block;
+        width: 50%;
+        margin: 0 -2px;
+        font-size: .9em;
+        line-height: 2;
+
+        &:nth-of-type(even) {
+            text-indent: 1em;
+        }
+        
+        a {
+            color: #bbb;
+            cursor: pointer;
+            text-decoration: none;
+            &:hover {
+                color: #555;
+            }
+        }
+    }
+}
+
+.help-content {
+
+    h3 {
+        margin-top: 40px;
+        margin-bottom: 1em;
+    }
+}
+
+#contact [type='submit'] {
+    margin: 40px 0;
+}
+
+.stripe-header {
+    padding: 30px 0 40px;
+    font-weight: 100;
+    color: $spotblue;
+}
+
+input[type='text'], textarea {
+    font-family: $roboto;
+    outline: none;
+    width: 100%;
+    display: block;
+    border: none;
+    line-height: 2em;
+    font-size: 1.5em;
+    font-weight: 100;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    padding: 4px 10px;
+    font-weight: 100;
+    margin-top: 30px;
+
+    &:focus {
+        &::-webkit-input-placeholder {
+           color: #ddd;
+        }
+
+        &:-moz-placeholder { /* Firefox 18- */
+           color: #ddd;  
+        }
+
+        &::-moz-placeholder {  /* Firefox 19+ */
+           color: #ddd;  
+        }
+
+        &:-ms-input-placeholder {  
+           color: #ddd;  
+        }
+    }
+}
+
+textarea {
+    height: 200px;
+}
+
+button, .button, [type='submit'] {
+    font-family: $roboto;
+    background: $lightspotblue;
+    color: #f9f9f9;
+    @include border-radius(3px);
+    @include transition(all .09s ease-in-out);
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        background: $spotblue;
+    }
+
+}
+
+hr {
+    display: block;
+    border: 1px solid #ddd;
+    border-bottom: none;
+}
+
+@media all and (max-width: 768px) {
+    .share-what, .align-middle {
+        padding-top: 0;
+    }
+}
