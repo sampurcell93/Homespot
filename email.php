@@ -9,5 +9,5 @@
 		header("Location: /");
 	}
 	else {
-		header("Location: /")
+		header("Location: /");
 	}
