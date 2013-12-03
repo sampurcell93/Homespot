@@ -107,6 +107,11 @@ nav {
             text-decoration: none;
             cursor: pointer;
 
+            &.selected-tab {
+                border-bottom: 2px solid $spotblue;
+                color: #333;
+            }
+
             &:hover {
                 color: #333;
             }

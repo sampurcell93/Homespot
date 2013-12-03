@@ -1,13 +1,13 @@
+# ATTENTION: This is shitty javascript. Most of it is recycled. Todo: Unshittify.
+cc = -> for arg in arguments then console.log arg
 $ ->
-  cc = -> for arg in arguments then console.log arg
-
   goToPage = (page) ->
     $t = $ @
     rel = page || $t.attr "rel"
     $g = $("#" + $t.parent().data("group"))
     $link = $("#" + rel)
-    return  if $t.hasClass("slider")
-    return  if $link.hasClass("active-page")
+    return if $t.hasClass("slider")
+    return if $link.hasClass("active-page")
     $g.children().hide().removeClass "active-page"
     if typeof rel is "undefined"
       i = $t.index()
@@ -15,7 +15,8 @@ $ ->
     $g.children().removeClass "active-page"
     $link.fadeIn "fast"
     $link.addClass "active-page"
-    $t.addClass("selected-tab").siblings().removeClass "selected-tab"
+    $(".selected-tab").removeClass "selected-tab"
+    $t.addClass("selected-tab")
     unless $t.parent().attr("hashchange") == "false"
       window.location.hash = rel
       $('html, body').animate 
@@ -47,3 +48,10 @@ $ ->
         scrollTop: pos - 70 + "px"
     , 400
     e.preventDefault()
+$(window).on "hashchange", ->
+  pages = ["contact", "help", "home", "blog", "team"]
+  hash = window.location.hash.slice(1)
+  if pages.indexOf(hash) != -1
+    # Stop the page scroll shit
+    $("html, body").finish()
+    $("[rel=" + hash + "]").first().trigger "click"
