@@ -54,4 +54,4 @@ $(window).on "hashchange", ->
   if pages.indexOf(hash) != -1
     # Stop the page scroll shit
     $("html, body").finish()
-    $("[rel=" + hash + "]").first().trigger "click"
+    $("[rel=" + hash + "]").trigger "click"

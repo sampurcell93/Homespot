@@ -1,8 +1,8 @@
 <div id="contact">
 	<div class="full-background faded-color">
-		<h1 class="container stripe-header">
-			Contact Us
-		</h1>
+		<div class="container">
+			<h1 class='columns twelve stripe-header'>Contact Us</h1>
+		</div>
 	</div>
 	<div class="container">
 		<form action="email.php" method="post">

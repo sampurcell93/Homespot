@@ -82,12 +82,13 @@ header {
         position: relative;
 
         &:before {
-            // content: 'Spotted';
-            font-size: 3em;
-            color: red;
+            content: 'Spotted';
+            font-size: 2.1em;
+            color: $lightspotblue;
             position: absolute;
-            left: 0;
+            left: 60px;
             top: 0;
+            font-weight: 100;
         }
     }
 }
@@ -287,7 +288,7 @@ input[type='text'], textarea {
     font-weight: 100;
     border-bottom: 1px solid #eee;
     color: #555;
-    padding: 4px 10px;
+    padding: 4px 10px 4px 0;
     font-weight: 100;
     margin-top: 30px;
 

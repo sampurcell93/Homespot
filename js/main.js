@@ -83,7 +83,7 @@
     hash = window.location.hash.slice(1);
     if (pages.indexOf(hash) !== -1) {
       $("html, body").finish();
-      return $("[rel=" + hash + "]").first().trigger("click");
+      return $("[rel=" + hash + "]").trigger("click");
     }
   });
 

@@ -1515,18 +1515,20 @@ header ul {
 }
 /* line 84, ../sass/screen.scss */
 header ul:before {
-  font-size: 3em;
-  color: red;
+  content: 'Spotted';
+  font-size: 2.1em;
+  color: #8d99ad;
   position: absolute;
-  left: 0;
+  left: 60px;
   top: 0;
+  font-weight: 100;
 }
 
-/* line 95, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 nav {
   display: inline;
 }
-/* line 100, ../sass/screen.scss */
+/* line 101, ../sass/screen.scss */
 nav ul li {
   float: right;
   text-align: center;
@@ -1537,52 +1539,52 @@ nav ul li {
   text-decoration: none;
   cursor: pointer;
 }
-/* line 110, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 nav ul li.selected-tab {
   border-bottom: 2px solid #707e98;
   color: #333;
 }
-/* line 115, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 nav ul li:hover {
   color: #333;
 }
 
-/* line 122, ../sass/screen.scss */
+/* line 123, ../sass/screen.scss */
 footer {
   margin-top: 40px !important;
   border-top: 2px solid #eee;
 }
-/* line 126, ../sass/screen.scss */
+/* line 127, ../sass/screen.scss */
 footer nav {
   float: left;
   margin-top: 50px;
 }
-/* line 132, ../sass/screen.scss */
+/* line 133, ../sass/screen.scss */
 footer nav ul li {
   float: left;
   font-size: .9em;
   color: #777;
 }
-/* line 139, ../sass/screen.scss */
+/* line 140, ../sass/screen.scss */
 footer .copyright {
   float: right;
   margin-top: -20px;
 }
 
-/* line 145, ../sass/screen.scss */
+/* line 146, ../sass/screen.scss */
 .full-background {
   width: 100%;
 }
-/* line 148, ../sass/screen.scss */
+/* line 149, ../sass/screen.scss */
 .full-background.main-color {
   background: #707e98;
 }
-/* line 152, ../sass/screen.scss */
+/* line 153, ../sass/screen.scss */
 .full-background.faded-color {
   background: #f0f2f4;
 }
 
-/* line 157, ../sass/screen.scss */
+/* line 158, ../sass/screen.scss */
 .sexy-intro {
   color: #f9f9f9;
   font-size: 1.4em;
@@ -1592,46 +1594,46 @@ footer .copyright {
   min-height: 300px;
   padding-top: 40px;
 }
-/* line 165, ../sass/screen.scss */
+/* line 166, ../sass/screen.scss */
 .sexy-intro h1 {
   margin-left: 0;
 }
-/* line 168, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 .sexy-intro span {
   display: block;
 }
 
-/* line 171, ../sass/screen.scss */
+/* line 172, ../sass/screen.scss */
 .biglogo {
   background: url("../images/app-icon-2x.png") center center no-repeat;
   display: block;
   height: 350px;
 }
 
-/* line 178, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 .iphone-mock {
   background: url("../images/iphone-mock.png") center center no-repeat;
   display: block;
   height: 550px;
 }
 
-/* line 185, ../sass/screen.scss */
+/* line 186, ../sass/screen.scss */
 section {
   padding: 40px 0;
   font-size: .9em;
 }
 
-/* line 190, ../sass/screen.scss */
+/* line 191, ../sass/screen.scss */
 .share-what {
   padding-top: 50px;
 }
 
-/* line 194, ../sass/screen.scss */
+/* line 195, ../sass/screen.scss */
 .align-middle {
   padding-top: 150px;
 }
 
-/* line 201, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 ul.about-tabs li {
   line-height: 2;
   font-size: 1.9em;
@@ -1647,34 +1649,34 @@ ul.about-tabs li {
   -o-transition: all 0.17s ease-in-out;
   transition: all 0.17s ease-in-out;
 }
-/* line 213, ../sass/screen.scss */
+/* line 214, ../sass/screen.scss */
 ul.about-tabs li:hover {
   color: #282828;
   padding-left: 25px;
   background: #f9f9f9;
 }
-/* line 219, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 ul.about-tabs li:first-of-type {
   border-bottom: none;
 }
-/* line 222, ../sass/screen.scss */
+/* line 223, ../sass/screen.scss */
 ul.about-tabs li:last-of-type {
   border-top: none;
 }
 
-/* line 228, ../sass/screen.scss */
+/* line 229, ../sass/screen.scss */
 ul.help-menu {
   padding: 70px 0 40px;
   position: relative;
 }
-/* line 232, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 ul.help-menu:before {
   content: "Topics";
   position: absolute;
   left: 0;
   top: 40px;
 }
-/* line 239, ../sass/screen.scss */
+/* line 240, ../sass/screen.scss */
 ul.help-menu li {
   display: inline-block;
   width: 50%;
@@ -1682,40 +1684,40 @@ ul.help-menu li {
   font-size: .9em;
   line-height: 2;
 }
-/* line 246, ../sass/screen.scss */
+/* line 247, ../sass/screen.scss */
 ul.help-menu li:nth-of-type(even) {
   text-indent: 1em;
 }
-/* line 250, ../sass/screen.scss */
+/* line 251, ../sass/screen.scss */
 ul.help-menu li a {
   color: #bbb;
   cursor: pointer;
   text-decoration: none;
 }
-/* line 254, ../sass/screen.scss */
+/* line 255, ../sass/screen.scss */
 ul.help-menu li a:hover {
   color: #555;
 }
 
-/* line 263, ../sass/screen.scss */
+/* line 264, ../sass/screen.scss */
 .help-content h3 {
   margin-top: 40px;
   margin-bottom: 1em;
 }
 
-/* line 269, ../sass/screen.scss */
+/* line 270, ../sass/screen.scss */
 #contact [type='submit'] {
   margin: 40px 0;
 }
 
-/* line 273, ../sass/screen.scss */
+/* line 274, ../sass/screen.scss */
 .stripe-header {
   padding: 30px 0 40px;
   font-weight: 100;
   color: #707e98;
 }
 
-/* line 279, ../sass/screen.scss */
+/* line 280, ../sass/screen.scss */
 input[type='text'], textarea {
   font-family: "Roboto", sans-serif;
   outline: none;
@@ -1727,35 +1729,35 @@ input[type='text'], textarea {
   font-weight: 100;
   border-bottom: 1px solid #eee;
   color: #555;
-  padding: 4px 10px;
+  padding: 4px 10px 4px 0;
   font-weight: 100;
   margin-top: 30px;
 }
-/* line 295, ../sass/screen.scss */
+/* line 296, ../sass/screen.scss */
 input[type='text']:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
   color: #ddd;
 }
-/* line 299, ../sass/screen.scss */
+/* line 300, ../sass/screen.scss */
 input[type='text']:focus:-moz-placeholder, textarea:focus:-moz-placeholder {
   /* Firefox 18- */
   color: #ddd;
 }
-/* line 303, ../sass/screen.scss */
+/* line 304, ../sass/screen.scss */
 input[type='text']:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
   /* Firefox 19+ */
   color: #ddd;
 }
-/* line 307, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 input[type='text']:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder {
   color: #ddd;
 }
 
-/* line 313, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
 textarea {
   height: 200px;
 }
 
-/* line 317, ../sass/screen.scss */
+/* line 318, ../sass/screen.scss */
 button, .button, [type='submit'] {
   font-family: "Roboto", sans-serif;
   background: #8d99ad;
@@ -1775,12 +1777,12 @@ button, .button, [type='submit'] {
   border: none;
   cursor: pointer;
 }
-/* line 329, ../sass/screen.scss */
+/* line 330, ../sass/screen.scss */
 button:hover, .button:hover, [type='submit']:hover {
   background: #707e98;
 }
 
-/* line 335, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 hr {
   display: block;
   border: 1px solid #ddd;
@@ -1788,7 +1790,7 @@ hr {
 }
 
 @media all and (max-width: 768px) {
-  /* line 342, ../sass/screen.scss */
+  /* line 343, ../sass/screen.scss */
   .share-what, .align-middle {
     padding-top: 0;
   }
