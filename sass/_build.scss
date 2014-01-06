@@ -13,9 +13,11 @@
 
 $roboto: 'Roboto', sans-serif;
 $spotblue: rgb(112, 126, 152);
+$medspotblue: #999DA6;
 $lightspotblue: #8D99AD;
 $accentblue: #F0F2F4;
 $darkaccent: #728099;
+$darkblue: #374052;
 $light: #ccc;
 
 .light { color: $light; }
@@ -24,7 +26,7 @@ $light: #ccc;
 .relative { position: relative; display: block; }
 .absolute { position: absolute;}
 .sticky { position: fixed !important;}
-.fr { float: right; }
+.fr { float: right !important;}
 .fl { float: left; }
 .m0 { margin: 0;}
 .m10 { margin: 10px !important;}
@@ -47,7 +49,7 @@ $light: #ccc;
 .p15 { padding: 15px; }
 .p30 { padding: 30px !important;}
 .pointer { cursor: pointer; }
-.border-simple { border: 1px solid #ccc; }
+.bs { border: 1px solid #ccc; }
 .no-show { @include opacity(0);}
 .show {@include opacity(1);}
 .noclick { pointer-events: none;}

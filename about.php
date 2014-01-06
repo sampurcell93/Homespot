@@ -13,19 +13,17 @@
         <div id='about-tabs' class='columns nine offset-one'>
             <div id="story">
                 <h3>Our story</h3>
-                <p>Prior to meeting, we had spent three long (remote) weeks working hard to make a product. This process could've easily failed if we did not share the same values from the start. Once we had the opportunity to formally meet one another, it clicked. We were a team, not because we had been working on the same project, but because we understood each other's values.</p>
-
-                <p>From the beginning, we wanted to share a message. We've learned a lot and we've grown plenty. Are values haven't changed and thus our message hasn't either. We continue to build a product that will give people the opportunity to be themselves.</p>
-
-                <p>We love what Spotted stands for and what it means to our users. We're spotting things everyday. What have you spotted?</p>
+                <p>We set out to make something for ourselves. No focus groups. No catering to anyone other than ourselves. We are all young adults looking to make a change in current social platforms. We wanted to create something without pretense or exclusivity. Our mission was to allow people to better explore their hometown, and to help others do the same.</p>
             </div>
             <div id="messages">
                 <h3>Our Message</h3>
-                <p>We believe in a genuine social experience. We made Spotted to stay connected with our friends in a natural way, and to make every interaction feel exactly as they do in a physical setting.</p>
+                <p>To our users,</p>
+                <p>The Spotted team curates the content we want to see. We would never ask you to use an app that we wouldn’t use ourselves. From businesses, venues, and community groups, we will be uploading the best of what we see. But we are only a small team. We want to help you discover the best of what’s out there each day, but we need your help. We need you to give back and Spot the best of what you find. This app is about improving the lives of everyone, and we need your help.</p>
+                <p>Happy Spotting.</p>
             </div>
             <div id="values">
                 <h3>Our Values</h3>
-                <p>We value hard work. We value success. We value the ability to have fun.</p>
+                <p>We work hard, just like you. When we finally have a night off, we want to make the most of it. We push ourselves to explore past the neighborhood bar, to find a poetry reading, chili cook-off, or hockey game. We know finding what you like means trying everything. With Spotted, we hope to help everyone discover a passion, or simply have more fun.</p>
             </div>
         </div>
     </div>

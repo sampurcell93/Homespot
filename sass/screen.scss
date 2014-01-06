@@ -16,7 +16,11 @@ body {
     font-family: $roboto;
     color: #777;
     font-weight: 300;
-    padding: 4em 0;
+    @include transition(padding .3s ease-in-out);
+//    padding-top: 5em;
+
+    &.header-visible {
+    }
 }
 
 h1 { 
@@ -35,11 +39,17 @@ h2 {
     font-weight: 100;
     margin: .7em 0;
     color: $lightspotblue;
+
+    i[class*="icon"] {
+        padding: 0 10px 0 0;
+        display: inline-block;
+        color: $darkaccent;
+    }
 }
 
 p, dl {
     line-height: 1.65;
-    color: #999;
+    color: #696969;
     font-size: .87rem;
     margin: 15px 0;
 }
@@ -64,31 +74,61 @@ dd::after {
 
 header {
     display: block;
-    line-height: 4em;
+    line-height: 6em;
     z-index: 999;
     width: 100%;
     // background: #f9f9f9;
     background: #fff;
     top: 0;
     position: fixed;
-    @include transition(all .15s ease-in-out);
+    @include transition(all .3s ease-in-out);
+    @include box-shadow(rgba(0, 0, 0, 0.027451) 0px 4px 0px);
 
-    &.has-shadow {
-        @include box-shadow(rgba(0, 0, 0, 0.027451) 0px 4px 0px);
+    &.hidden-header {
+        @include box-shadow(none);
+        top: -110px;
+
+        .button {
+            bottom: -100px;
+            border-color: $medspotblue;
+         }
     }
 
     ul {
-        background: url("../images/smallappicon.png") left center no-repeat;
         position: relative;
+    }
 
-        &:before {
-            content: 'Spotted';
-            font-size: 2.1em;
-            color: $lightspotblue;
-            position: absolute;
-            left: 60px;
-            top: 0;
-            font-weight: 100;
+    #spotted-header {
+        padding-left: 60px;
+        background: url("../images/smallappicon.png") left center no-repeat;
+        font-size: 2.1em;
+        color: $lightspotblue;
+        position: absolute;
+        left: 00px;
+        top: 0;
+        font-weight: 100;
+    }
+
+    .button {
+        @include border-radius(4px);
+        position: relative;
+        background: transparent;
+        margin: 2rem 0 2rem;
+        line-height: 1em;
+        font-weight: 300;
+        color: #bbb;
+        border: 2px solid #DDDFE2;
+        bottom: 3px;
+        left: 10px;
+
+        a { 
+            color: #bbb;
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+        &:hover {
+            color: #bbb;
         }
     }
 }
@@ -96,20 +136,19 @@ header {
 nav {
     display: inline;
     ul {
-        @extend .clearfix;
-
+        overflow: visible !important;
         li {
             float: right;
             text-align: center;
             padding: 0 10px;
-            font-size: .7em;
+            font-size: 1em;
             color: #bbb;
             font-weight: 300;
             text-decoration: none;
             cursor: pointer;
 
             &.selected-tab {
-                border-bottom: 2px solid $spotblue;
+//                border-bottom: 2px solid $spotblue;
                 color: #333;
             }
 
@@ -146,8 +185,9 @@ footer {
 .full-background {
     width: 100%;
 
-    &.main-color {
-        background: $spotblue;
+    &.main-splash {
+        background: url("../images/app-icon-1x.png") center 100px no-repeat, $darkblue;
+        height: 450px;
     }
 
     &.faded-color {
@@ -157,16 +197,17 @@ footer {
 
 .sexy-intro {
     color: #f9f9f9;
-    font-size: 1.4em;
     line-height: 1.4;
+    font-size: 2.78em;
     font-weight: 100;
     font-style: normal;
     min-height: 300px;
-    padding-top: 40px;
-    h1 {
-         margin-left: 0;
-    }
-    span { display: block; }
+    text-align: center;
+    padding-top: 280px;
+
+    span.accent { color: $spotblue; }
+
+    .js-spotted-object { border-bottom: 2px solid $spotblue; }
 }
 
 .biglogo {
@@ -177,15 +218,17 @@ footer {
 }
 
 .iphone-mock {
-    background: url("../images/iphone-mock.png") center center no-repeat;
+    background: url("../images/screenshot.png") bottom no-repeat;
     // @include background-size(cover);
     display: block;
-    height: 550px;
+    height: 650px;
+    position: relative;
 }
 
 section {
-    padding: 40px 0;
+    padding: 70px 0;
     font-size: .9em;
+    @extend .clearfix;
 }
 
 .share-what {
@@ -319,16 +362,24 @@ button, .button, [type='submit'] {
     font-family: $roboto;
     background: $lightspotblue;
     color: #f9f9f9;
-    @include border-radius(3px);
-    @include transition(all .09s ease-in-out);
+    @include border-radius(5px);
+    @include transition(background .09s ease-in-out, bottom .3s ease-in-out, color .09s ease-in-out, border-color .3s ease-in-out);
     font-size: 1rem;
     font-weight: 300;
     padding: 10px 30px;
+    outline: none;
     border: none;
     cursor: pointer;
 
     &:hover {
         background: $spotblue;
+    }
+    
+    &.learn-more {
+        margin: 30px 0 0 0;
+        border: 2px solid #DDDFE2;
+        color: $medspotblue;
+        background: transparent;
     }
 
 }
@@ -337,6 +388,68 @@ hr {
     display: block;
     border: 1px solid #ddd;
     border-bottom: none;
+}
+
+#team h2 {
+    border-bottom: 1px solid $accentblue;
+}
+
+
+[class*='icon'] {
+    &.pink::before { color: #EA7D94; }
+    &.orange::before { color: #EAB87D }
+    &.light::before { color: $spotblue; }
+}
+
+.person-blurb:nth-of-type(2n+1)  {
+
+    p {
+        text-align: right;
+    }
+}
+
+.person-blurb:nth-of-type(2n) {
+    float: right;
+    border-left: 2px solid $accentblue;
+
+
+    p { 
+        text-align: left;
+    }
+
+    .person-image {
+        float: right;
+        margin-left: 9px;
+    }
+}
+
+.person-blurb:hover {
+
+    img { 
+        filter: none;
+        -webkit-filter: grayscale(0);       
+    }
+}
+
+.person-image {
+    @include border-radius(50%);
+    @include transition(all .3s ease-in-out);
+    border: 3px solid $darkblue;
+    overflow: hidden;
+    float: left;
+    margin-right: 19px;
+    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+
+    &:hover, &.saturated {
+        filter: none;
+        -webkit-filter: grayscale(0);
+    }
+}
+
+strong, .strong {
+    font-weight: 400;
 }
 
 @media all and (max-width: 768px) {

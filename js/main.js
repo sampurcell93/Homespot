@@ -13,10 +13,15 @@
   };
 
   $(function() {
-    var goToPage, hash;
-    goToPage = function(page) {
+    var $people, checkHeight, flash, goToPage, hash, len, objectflasher, personindex;
+    checkHeight = function() {
+      if ($("body").height() < $(window).height()) {
+        return $("header").removeClass("hidden-header");
+      }
+    };
+    goToPage = function(page, $el) {
       var $g, $link, $t, i, rel;
-      $t = $(this);
+      $t = $el || $(this);
       rel = page || $t.attr("rel");
       $g = $("#" + $t.parent().data("group"));
       $link = $("#" + rel);
@@ -33,19 +38,21 @@
       }
       $g.children().removeClass("active-page");
       $link.fadeIn("fast");
-      $link.addClass("active-page");
+      $link.addClass("active-page").trigger("viewingpage");
       $(".selected-tab").removeClass("selected-tab");
       $t.addClass("selected-tab");
       if ($t.parent().attr("hashchange") !== "false") {
         window.location.hash = rel;
-        return $('html, body').animate({
+        $('html, body').animate({
           scrollTop: 0
         }, 400);
       }
+      return checkHeight();
     };
-    $(".tabs").find("li").on("click", function() {
+    $(".tabs").on("click", "li", function() {
       return goToPage.call(this);
-    }).each(function() {
+    });
+    $(".tabs li").each(function() {
       var $g, $t;
       $t = $(this);
       if (!$t.index()) {
@@ -53,20 +60,22 @@
       }
       $g = $("#" + $t.parent().data("group"));
       $g.children(":gt(0)").hide();
-      return $g.children().first().addClass("active-page");
+      return $g.children().first().addClass("active-page").trigger("viewingpage");
     });
     hash = window.location.hash;
     if (hash !== "") {
-      $("[rel=" + hash.slice(1) + "]").trigger("click");
+      goToPage.call($("[rel=" + hash.slice(1) + "]"), hash.slice(1));
     }
     $(window).scroll(function() {
       if ($(window).scrollTop() > 0) {
-        return $("header").addClass("has-shadow");
+        $("header").removeClass("hidden-header");
+        return $("body").addClass("header-visible");
       } else {
-        return $("header").removeClass("has-shadow");
+        $("header").addClass("hidden-header");
+        return $("body").removeClass("header-visible");
       }
     });
-    return $(".js-goto").on("click", "a", function(e) {
+    $(".js-goto").on("click", "a", function(e) {
       var loc, pos;
       loc = $(this).attr("href");
       pos = $(loc).offset().top;
@@ -75,6 +84,33 @@
       }, 400);
       return e.preventDefault();
     });
+    $("#contact").on("viewingpage", function() {
+      return $(this).find("input").first().focus().select();
+    });
+    objectflasher = function() {
+      var $spottedobj, arr, len, objindex;
+      $spottedobj = $(".js-spotted-object");
+      objindex = 0;
+      arr = ["toys", "Santa", "his new apartment", "birds flying high", "Jay-Z", "Kanye", "a white Christmas"];
+      len = arr.length;
+      return function() {
+        return $spottedobj.fadeOut("fast", function() {
+          $(this).text(arr[objindex % len]).fadeIn("fast");
+          return objindex++;
+        });
+      };
+    };
+    setInterval(objectflasher(), 6000);
+    $people = $(".person-image");
+    len = $people.length;
+    personindex = 0;
+    flash = function() {
+      $(".saturated").removeClass("saturated");
+      $people.eq(personindex % len).addClass("saturated");
+      return personindex++;
+    };
+    flash();
+    return setInterval(flash, 5000);
   });
 
   $(window).on("hashchange", function() {
